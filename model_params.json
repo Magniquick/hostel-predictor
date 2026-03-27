@@ -1,0 +1,360 @@
+{
+  "eligibility": {
+    "blocks": {
+      "male": [
+        {
+          "block": "XIV Block",
+          "c_new": 8.4442,
+          "sigma": 0.5,
+          "cum_k": 544,
+          "k": 544
+        },
+        {
+          "block": "XV Block",
+          "c_new": 8.0873,
+          "sigma": 0.5,
+          "cum_k": 1029,
+          "k": 485
+        },
+        {
+          "block": "IX Block",
+          "c_new": 8.0302,
+          "sigma": 0.5,
+          "cum_k": 1091,
+          "k": 62
+        },
+        {
+          "block": "XX BLOCK",
+          "c_new": 7.9027,
+          "sigma": 0.5,
+          "cum_k": 1231,
+          "k": 140
+        },
+        {
+          "block": "XXIII Block",
+          "c_new": 7.885,
+          "sigma": 0.5,
+          "cum_k": 1251,
+          "k": 20
+        },
+        {
+          "block": "X Block",
+          "c_new": 7.3406,
+          "sigma": 0.5992,
+          "cum_k": 1733,
+          "k": 482
+        }
+      ],
+      "female": [
+        {
+          "block": "XXII Block",
+          "c_new": 8.6672,
+          "sigma": 0.5,
+          "cum_k": 211,
+          "k": 211
+        },
+        {
+          "block": "XXI Block (New Ladies Block)",
+          "c_new": 8.352,
+          "sigma": 0.7014,
+          "cum_k": 306,
+          "k": 95
+        },
+        {
+          "block": "XIII Block",
+          "c_new": 7.3492,
+          "sigma": 0.5,
+          "cum_k": 754,
+          "k": 448
+        },
+        {
+          "block": "VIII Block",
+          "c_new": 5.8483,
+          "sigma": 0.7665,
+          "cum_k": 893,
+          "k": 139
+        }
+      ]
+    },
+    "ceiling": {
+      "male": 0.883,
+      "female": 0.8783
+    }
+  },
+  "block_fractions": {
+    "male": [
+      {
+        "cgpa": 4.25,
+        "n": 4,
+        "fracs": {
+          "XIV Block": 0.0,
+          "XV Block": 0.0,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.0,
+          "XXIII Block": 0.0,
+          "X Block": 1.0
+        }
+      },
+      {
+        "cgpa": 4.75,
+        "n": 11,
+        "fracs": {
+          "XIV Block": 0.0,
+          "XV Block": 0.0,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.0,
+          "XXIII Block": 0.0,
+          "X Block": 1.0
+        }
+      },
+      {
+        "cgpa": 5.25,
+        "n": 19,
+        "fracs": {
+          "XIV Block": 0.0,
+          "XV Block": 0.0,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.2105,
+          "XXIII Block": 0.2105,
+          "X Block": 0.5789
+        }
+      },
+      {
+        "cgpa": 5.75,
+        "n": 28,
+        "fracs": {
+          "XIV Block": 0.0,
+          "XV Block": 0.0,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.0714,
+          "XXIII Block": 0.0,
+          "X Block": 0.9286
+        }
+      },
+      {
+        "cgpa": 6.25,
+        "n": 96,
+        "fracs": {
+          "XIV Block": 0.0104,
+          "XV Block": 0.0,
+          "IX Block": 0.0208,
+          "XX BLOCK": 0.1562,
+          "XXIII Block": 0.0104,
+          "X Block": 0.8021
+        }
+      },
+      {
+        "cgpa": 6.75,
+        "n": 158,
+        "fracs": {
+          "XIV Block": 0.0443,
+          "XV Block": 0.0823,
+          "IX Block": 0.0506,
+          "XX BLOCK": 0.1772,
+          "XXIII Block": 0.019,
+          "X Block": 0.6266
+        }
+      },
+      {
+        "cgpa": 7.25,
+        "n": 209,
+        "fracs": {
+          "XIV Block": 0.1196,
+          "XV Block": 0.0957,
+          "IX Block": 0.0478,
+          "XX BLOCK": 0.2584,
+          "XXIII Block": 0.0287,
+          "X Block": 0.4498
+        }
+      },
+      {
+        "cgpa": 7.75,
+        "n": 242,
+        "fracs": {
+          "XIV Block": 0.157,
+          "XV Block": 0.1488,
+          "IX Block": 0.124,
+          "XX BLOCK": 0.1281,
+          "XXIII Block": 0.0083,
+          "X Block": 0.4339
+        }
+      },
+      {
+        "cgpa": 8.25,
+        "n": 556,
+        "fracs": {
+          "XIV Block": 0.464,
+          "XV Block": 0.4371,
+          "IX Block": 0.0216,
+          "XX BLOCK": 0.0072,
+          "XXIII Block": 0.0072,
+          "X Block": 0.0629
+        }
+      },
+      {
+        "cgpa": 8.75,
+        "n": 281,
+        "fracs": {
+          "XIV Block": 0.516,
+          "XV Block": 0.4413,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.0071,
+          "XXIII Block": 0.0,
+          "X Block": 0.0356
+        }
+      },
+      {
+        "cgpa": 9.25,
+        "n": 109,
+        "fracs": {
+          "XIV Block": 0.5138,
+          "XV Block": 0.4037,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.0,
+          "XXIII Block": 0.0,
+          "X Block": 0.0826
+        }
+      },
+      {
+        "cgpa": 9.75,
+        "n": 20,
+        "fracs": {
+          "XIV Block": 0.7,
+          "XV Block": 0.25,
+          "IX Block": 0.0,
+          "XX BLOCK": 0.0,
+          "XXIII Block": 0.0,
+          "X Block": 0.05
+        }
+      }
+    ],
+    "female": [
+      {
+        "cgpa": 4.75,
+        "n": 5,
+        "fracs": {
+          "XXII Block": 0.0,
+          "XXI Block (New Ladies Block)": 0.4,
+          "XIII Block": 0.0,
+          "VIII Block": 0.6
+        }
+      },
+      {
+        "cgpa": 5.25,
+        "n": 3,
+        "fracs": {
+          "XXII Block": 0.0,
+          "XXI Block (New Ladies Block)": 0.0,
+          "XIII Block": 0.0,
+          "VIII Block": 1.0
+        }
+      },
+      {
+        "cgpa": 5.75,
+        "n": 6,
+        "fracs": {
+          "XXII Block": 0.0,
+          "XXI Block (New Ladies Block)": 0.1667,
+          "XIII Block": 0.0,
+          "VIII Block": 0.8333
+        }
+      },
+      {
+        "cgpa": 6.25,
+        "n": 13,
+        "fracs": {
+          "XXII Block": 0.0,
+          "XXI Block (New Ladies Block)": 0.0769,
+          "XIII Block": 0.4615,
+          "VIII Block": 0.4615
+        }
+      },
+      {
+        "cgpa": 6.75,
+        "n": 88,
+        "fracs": {
+          "XXII Block": 0.0455,
+          "XXI Block (New Ladies Block)": 0.125,
+          "XIII Block": 0.5227,
+          "VIII Block": 0.3068
+        }
+      },
+      {
+        "cgpa": 7.25,
+        "n": 184,
+        "fracs": {
+          "XXII Block": 0.0543,
+          "XXI Block (New Ladies Block)": 0.0598,
+          "XIII Block": 0.5435,
+          "VIII Block": 0.3424
+        }
+      },
+      {
+        "cgpa": 7.75,
+        "n": 209,
+        "fracs": {
+          "XXII Block": 0.0861,
+          "XXI Block (New Ladies Block)": 0.0909,
+          "XIII Block": 0.7177,
+          "VIII Block": 0.1053
+        }
+      },
+      {
+        "cgpa": 8.25,
+        "n": 158,
+        "fracs": {
+          "XXII Block": 0.462,
+          "XXI Block (New Ladies Block)": 0.0696,
+          "XIII Block": 0.4304,
+          "VIII Block": 0.038
+        }
+      },
+      {
+        "cgpa": 8.75,
+        "n": 142,
+        "fracs": {
+          "XXII Block": 0.4507,
+          "XXI Block (New Ladies Block)": 0.162,
+          "XIII Block": 0.3873,
+          "VIII Block": 0.0
+        }
+      },
+      {
+        "cgpa": 9.25,
+        "n": 71,
+        "fracs": {
+          "XXII Block": 0.5352,
+          "XXI Block (New Ladies Block)": 0.169,
+          "XIII Block": 0.2676,
+          "VIII Block": 0.0282
+        }
+      },
+      {
+        "cgpa": 9.75,
+        "n": 11,
+        "fracs": {
+          "XXII Block": 0.3636,
+          "XXI Block (New Ladies Block)": 0.3636,
+          "XIII Block": 0.2727,
+          "VIII Block": 0.0
+        }
+      }
+    ]
+  },
+  "block_order": {
+    "male": [
+      "XIV Block",
+      "XV Block",
+      "IX Block",
+      "XX BLOCK",
+      "XXIII Block",
+      "X Block"
+    ],
+    "female": [
+      "XXII Block",
+      "XXI Block (New Ladies Block)",
+      "XIII Block",
+      "VIII Block"
+    ]
+  }
+}
