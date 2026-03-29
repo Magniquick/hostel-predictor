@@ -5,102 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIT Manipal Hostel Predictor — AY2026</title>
 <style>
-  :root {
-    --bg: #0d1117; --card: #161b22; --card-hover: #1c2129; --border: #30363d;
-    --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --accent-dim: #1f6feb33;
-    --green: #3fb950; --green-dim: #23883320; --red: #f85149; --red-dim: #f8514920;
-    --yellow: #d29922; --yellow-dim: #d2992220; --radius: 8px;
-  }
+  :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --green: #3fb950; --red: #f85149; --yellow: #d29922; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    background: var(--bg); color: var(--text); min-height: 100vh;
-    padding: 2.5rem 1rem; line-height: 1.5;
-  }
-  .container { max-width: 680px; margin: 0 auto; }
-
-  h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
-  .subtitle { color: var(--muted); margin: 0.25rem 0 2rem; font-size: 0.85rem; }
-
-  /* Tabs */
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 2rem 1rem; }
+  .container { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.875rem; }
   .tabs { display: flex; gap: 0; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-  .tab {
-    padding: 0.6rem 1.25rem; cursor: pointer; color: var(--muted);
-    border-bottom: 2px solid transparent; font-size: 0.85rem; font-weight: 500;
-    transition: color 0.15s, border-color 0.15s; user-select: none;
-  }
+  .tab { padding: 0.5rem 1rem; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; font-size: 0.875rem; transition: color 0.15s; }
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-  /* Cards */
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem;
-  }
-
-  /* Inputs */
-  label { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
-  input[type="number"], select {
-    width: 100%; padding: 0.6rem 0.75rem; background: var(--bg); border: 1px solid var(--border);
-    border-radius: 6px; color: var(--text); font-size: 1.05rem; transition: border-color 0.15s;
-  }
-  input[type="number"]:focus, select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
-  .input-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
-  .input-row > div { flex: 1; }
-
-
-  /* Results */
-  .results { margin-top: 0.25rem; }
-  .result-row {
-    display: flex; align-items: center; padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border); transition: background 0.1s;
-  }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; margin-bottom: 1rem; }
+  label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; }
+  input, select { width: 100%; padding: 0.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-size: 1rem; }
+  input:focus, select:focus { outline: none; border-color: var(--accent); }
+  .row { display: flex; gap: 1rem; margin-bottom: 0.75rem; }
+  .row > div { flex: 1; }
+  .results { margin-top: 0.5rem; }
+  .result-row { display: flex; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
   .result-row:last-child { border-bottom: none; }
-  .result-row:hover { background: var(--card-hover); margin: 0 -1.5rem; padding: 0.5rem 1.5rem; }
-  .block-name { width: 170px; font-size: 0.85rem; flex-shrink: 0; font-weight: 500; }
-  .bar-container {
-    flex: 1; height: 24px; background: var(--bg); border-radius: 4px;
-    overflow: hidden; margin: 0 0.75rem;
-  }
-  .bar {
-    height: 100%; border-radius: 4px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 2px;
-  }
-  .bar.high { background: linear-gradient(90deg, var(--green), #2ea043); }
-  .bar.mid { background: linear-gradient(90deg, var(--yellow), #bb8009); }
-  .bar.low { background: linear-gradient(90deg, var(--red), #da3633); }
+  .block-name { width: 180px; font-size: 0.85rem; flex-shrink: 0; }
+  .bar-container { flex: 1; height: 20px; background: var(--bg); border-radius: 3px; overflow: hidden; margin: 0 0.75rem; }
+  .bar { height: 100%; border-radius: 3px; transition: width 0.3s ease; }
+  .bar.high { background: var(--green); }
+  .bar.mid { background: var(--yellow); }
+  .bar.low { background: var(--red); }
   .bar.none { background: var(--border); }
-  .prob {
-    width: 58px; text-align: right; font-size: 0.85rem;
-    font-variant-numeric: tabular-nums; flex-shrink: 0; font-weight: 500;
-  }
-
-  .model-desc { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.5; }
-  .model-desc strong { color: var(--text); }
-
-  .no-hostel .block-name { color: var(--red); font-weight: 400; }
-  .no-hostel .prob { color: var(--red); }
-
-  .note {
-    font-size: 0.7rem; color: var(--muted); margin-top: 1.5rem; line-height: 1.6;
-    padding-top: 1rem; border-top: 1px solid var(--border);
-  }
-
-  /* Responsive */
-  @media (max-width: 480px) {
-    body { padding: 1.5rem 0.75rem; }
-    .input-row { flex-direction: column; gap: 0.75rem; }
-    .block-name { width: 120px; font-size: 0.8rem; }
-    .bar-container { margin: 0 0.5rem; }
-    .result-row:hover { margin: 0 -1.25rem; padding: 0.5rem 1.25rem; }
-    .card { padding: 1rem 1.25rem; }
-  }
+  .prob { width: 55px; text-align: right; font-size: 0.85rem; font-variant-numeric: tabular-nums; flex-shrink: 0; }
+  .note { font-size: 0.75rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.4; }
+  .model-desc { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.4; }
+  .no-hostel .block-name { color: var(--red); }
 </style>
 </head>
 <body>
 <div class="container">
   <h1>MIT Manipal Hostel Predictor</h1>
-  <p class="subtitle">AY2026 allotment probability estimates</p>
+  <p class="subtitle">AY2026 allotment probability estimates — new block set (XIX / XVIII removed)</p>
 
   <div class="tabs">
     <div class="tab active" data-tab="elig">Can I get this block?</div>
@@ -108,10 +48,10 @@
   </div>
 
   <div class="card">
-    <div class="input-row">
+    <div class="row">
       <div>
         <label for="cgpa">CGPA</label>
-        <input type="number" id="cgpa" min="0" max="10" step="0.1" value="7.5" placeholder="0.0 – 10.0">
+        <input type="number" id="cgpa" min="0" max="10" step="0.1" value="7.5">
       </div>
       <div>
         <label for="gender">Gender</label>
@@ -126,7 +66,7 @@
   <div id="tab-elig">
     <p class="model-desc">
       <strong>Independent probabilities.</strong> Each bar shows P(you get this block | you choose it).
-      Pick a safe block with high odds, or gamble on a better one. These do <em>not</em> sum to 100%.
+      Pick a safe block with high odds, or gamble on a better one. These do NOT sum to 100%.
     </p>
     <div class="card"><div class="results" id="results-elig"></div></div>
   </div>
@@ -141,7 +81,8 @@
 
   <p class="note">
     Predictions are for students who intend to register. Input room-average CGPA if you know your roommate.
-    Drift-corrected for AY2026 population. No student data is stored or transmitted — all computation runs in your browser.
+    Model trained on AY2025 HMS data with drift correction for AY2026 population.
+    No student data is stored or transmitted — all computation happens in your browser.
   </p>
 </div>
 
@@ -152,69 +93,36 @@ function sigmoid(g, c, sigma) {
   return 1.0 / (1.0 + Math.exp(-(g - c) / sigma));
 }
 
-// ── Interpolate block fractions from MC lookup table ──
-function interpFracs(cgpa, gender) {
-  const table = MODEL.block_fractions[gender];
-  const blocks = MODEL.block_order[gender];
-  if (!table || table.length === 0) return null;
-
-  // clamp to table range
-  if (cgpa <= table[0].cgpa) return table[0].fracs;
-  if (cgpa >= table[table.length - 1].cgpa) return table[table.length - 1].fracs;
-
-  // find bracketing bins and lerp
-  for (let i = 1; i < table.length; i++) {
-    if (cgpa <= table[i].cgpa) {
-      const lo = table[i - 1], hi = table[i];
-      const t = (cgpa - lo.cgpa) / (hi.cgpa - lo.cgpa);
-      const result = {};
-      for (const b of blocks) {
-        result[b] = (lo.fracs[b] || 0) * (1 - t) + (hi.fracs[b] || 0) * t;
-      }
-      return result;
-    }
-  }
-  return table[table.length - 1].fracs;
-}
-
-// ── P(hostel | CGPA, interested) from envelope ──
-function pHostel(cgpa, gender) {
-  const env = MODEL.eligibility.ceiling[gender];
+// ── Eligibility model: P(get block | choose it) ──
+function predictElig(cgpa, gender) {
   const blocks = MODEL.eligibility.blocks[gender];
-  // use the last block's (worst) cumulative sigmoid as overall P(hostel)
-  const last = blocks[blocks.length - 1];
-  return Math.min(1.0, sigmoid(cgpa, last.c_new, last.sigma) / env);
+  const ceiling = MODEL.eligibility.ceiling[gender];
+  return blocks.map(e => ({
+    block: e.block,
+    prob: Math.min(1.0, sigmoid(cgpa, e.c_new, e.sigma) / ceiling) * 100
+  }));
 }
 
-// ── Allocation: P(block | CGPA) = P(hostel) × fraction(block, CGPA) ──
+// ── Allocation model: diffs of eligibility cumulative probabilities ──
+// P(end up in block Y) = P(rank ≤ cum_k(Y)) - P(rank ≤ cum_k(Y-1))
 function predictAlloc(cgpa, gender) {
-  const fracs = interpFracs(cgpa, gender);
-  const pH = pHostel(cgpa, gender);
-  const blocks = MODEL.block_order[gender];
+  const blocks = MODEL.eligibility.blocks[gender];
+  const ceiling = MODEL.eligibility.ceiling[gender];
 
-  const result = blocks.map(b => ({
-    block: b, prob: pH * (fracs[b] || 0) * 100
-  }));
-  result.push({ block: 'No hostel', prob: Math.max(0, (1 - pH) * 100) });
+  let prev = 0;
+  const result = [];
+  for (const e of blocks) {
+    const cumP = Math.min(1.0, sigmoid(cgpa, e.c_new, e.sigma) / ceiling);
+    result.push({ block: e.block, prob: (cumP - prev) * 100 });
+    prev = cumP;
+  }
+  result.push({ block: 'No hostel', prob: Math.max(0, (1 - prev) * 100) });
   result.sort((a, b) =>
-    a.block === 'No hostel' ? 1 : b.block === 'No hostel' ? -1 : b.prob - a.prob
+    a.block === 'No hostel' ? 1 :
+    b.block === 'No hostel' ? -1 :
+    b.prob - a.prob
   );
   return result;
-}
-
-// ── Eligibility: P(get Y | choose Y) = P(hostel) × cumulative fraction to Y ──
-function predictElig(cgpa, gender) {
-  const fracs = interpFracs(cgpa, gender);
-  const pH = pHostel(cgpa, gender);
-  const blocks = MODEL.block_order[gender];
-
-  // cumulative from best block down: if you choose Y, you get it if
-  // Y or anything better still has rooms → sum fractions from best to Y
-  let cumFrac = 0;
-  return blocks.map(b => {
-    cumFrac += (fracs[b] || 0);
-    return { block: b, prob: Math.min(pH * cumFrac, 1.0) * 100 };
-  });
 }
 
 function barClass(p) {
@@ -225,7 +133,8 @@ function barClass(p) {
 }
 
 function renderResults(containerId, results) {
-  document.getElementById(containerId).innerHTML = results.map(r => `
+  const el = document.getElementById(containerId);
+  el.innerHTML = results.map(r => `
     <div class="result-row ${r.block === 'No hostel' ? 'no-hostel' : ''}">
       <span class="block-name">${r.block}</span>
       <div class="bar-container"><div class="bar ${barClass(r.prob)}" style="width:${Math.max(0.5, r.prob)}%"></div></div>
@@ -242,6 +151,7 @@ function update() {
   renderResults('results-alloc', predictAlloc(cgpa, gender));
 }
 
+// Tabs
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -254,7 +164,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 document.getElementById('cgpa').addEventListener('input', update);
 document.getElementById('gender').addEventListener('change', update);
 
-fetch('model_params.json?v=' + Date.now())
+fetch('model_params.json')
   .then(r => r.json())
   .then(m => { MODEL = m; update(); });
 </script>
